@@ -18,5 +18,5 @@ node{
 	//''' 
 	stage 'tag'
 	sh 'env'
-	sh 'git tag 0.0.$BUILD_NUMBER && git push origin --tags'
+	sh 'git remote add origin git@github.com:bobeyuno/puppetlabs-apache.git && git tag 0.0.$BUILD_NUMBER && git push origin --tags'
 }
