@@ -27,6 +27,6 @@ node{
 			git clone -b development git@github.com:bobeyuno/control_repo.git
 	fi
 	cd control_repo
-	less puppetfile
+	less Puppetfile
 	'''
 }
