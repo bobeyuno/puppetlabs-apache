@@ -9,8 +9,12 @@ node{
 	stage 'Run spec test'
 	sh '''#!/bin/bash -l
 	ruby -v
-	rails generate rspec:install
-	rspec spec
+	bundle install
+	bundle exec rake spec
+	bundle exec rspec spec/acceptance
+	RS_DEBUG=yes bundle exec rspec spec/acceptance
+
+
 	''' 
 	stage 'test'
 	echo 'Do test'
