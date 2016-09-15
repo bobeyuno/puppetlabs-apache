@@ -11,7 +11,7 @@ node{
 	//sh 'source /usr/local/bin/'
 	sh 'export PATH=$PATH:/usr/local/bin; ruby -v'
 	//sh 'rails generate rspec:install'
-	sh '/usr/local/bin/rspec spec'  
+	sh 'export PATH=$PATH:/usr/local/bin; /usr/local/bin/rspec spec'  
 	echo 'sup world'
 	stage 'test'
 	echo 'Do test'
