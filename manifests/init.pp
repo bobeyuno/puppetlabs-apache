@@ -354,6 +354,11 @@ class apache (
       require => [Package['httpd'], Concat[$ports_file]],
     }
 
+    file { "/var/www/test_html":
+      ensure => file,
+      source  => "puppet:///modules/puppetlabs-apache/hi.html",
+    }
+
     # preserve back-wards compatibility to the times when default_mods was
     # only a boolean value. Now it can be an array (too)
     if is_array($default_mods) {
