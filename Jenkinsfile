@@ -7,6 +7,7 @@ node{
 	stage 'Run spec test'
 	sh 'echo "$PATH"'
 	sh 'export PATH=$PATH:/usr/local/bin'
+	sh 'echo "$PATH"'
 	//sh 'source /usr/local/bin/'
 	sh 'ruby -v'
 	//sh 'rails generate rspec:install'
