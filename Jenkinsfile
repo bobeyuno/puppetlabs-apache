@@ -16,7 +16,14 @@ node{
 
 
 	//''' 
-	stage 'tag'
-	sh 'env'
-	sh 'git remote set-url origin git@github.com:bobeyuno/puppetlabs-apache.git && git tag 0.0.$BUILD_NUMBER && git push origin --tags'
+	//stage 'tag'
+	//sh 'env'
+	//sh 'git remote set-url origin git@github.com:bobeyuno/puppetlabs-apache.git && git tag 0.0.$BUILD_NUMBER && git push origin --tags'
+
+	stage 'Update control repo'
+	sh '''
+	cd ../
+	git clone -b development git@github.com:bobeyuno/control_repo.git
+	cd control_repo
+	less puppetfile
 }
