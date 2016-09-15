@@ -30,7 +30,8 @@ node{
 	git checkout development
 	git pull	
 	less Puppetfile
-	sed "s/[0-9].[0-9].[0-9]*/0.0.$BUILD_NUMBER/" Puppetfile  Puppetfile
+	sed "s/[0-9].[0-9].[0-9]*/0.0.$BUILD_NUMBER/" <Puppetfile > Puppetfile.new
+	mv -f Puppetfile.new Puppetfile
 	less Puppetfile
 	'''
 }
