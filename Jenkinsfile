@@ -32,7 +32,7 @@ node{
 	//less Puppetfile
 	sed "s/[0-9].[0-9].[0-9]*/0.0.$BUILD_NUMBER/" <Puppetfile > Puppetfile.new
 	mv -f Puppetfile.new Puppetfile
-	//less Puppetfile
+	less Puppetfile
 	git push origin 
 	'''
 }
