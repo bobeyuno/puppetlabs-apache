@@ -26,6 +26,8 @@ node{
 	if [ ! -d control_repo ]; then
 			git clone -b development git@github.com:bobeyuno/control_repo.git
 	fi
+	git checkout development
+	git pull	
 	cd control_repo
 	less Puppetfile
 	sed s/:tag => '[0-9].[0-9].[0-9]'/:tag => '0.0.$BUILD_NUMBER/' Puppetfile
