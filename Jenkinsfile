@@ -21,9 +21,11 @@ node{
 	//sh 'git remote set-url origin git@github.com:bobeyuno/puppetlabs-apache.git && git tag 0.0.$BUILD_NUMBER && git push origin --tags'
 
 	stage 'Update control repo'
-	sh '''
+	sh '''#!/bin/bash -l
 	cd ../
-	git clone -b development git@github.com:bobeyuno/control_repo.git
+	if [ ! -d control_repo ]; then
+			git clone -b development git@github.com:bobeyuno/control_repo.git
+	fi
 	cd control_repo
 	less puppetfile
 	'''
