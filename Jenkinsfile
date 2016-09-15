@@ -18,5 +18,5 @@ node{
 	//''' 
 	stage 'tag'
 	sh 'env'
-	sh 'git tag -a $BUILD_NUMBER'
+	sh 'git tag 0.0.$BUILD_NUMBER && git push'
 }
