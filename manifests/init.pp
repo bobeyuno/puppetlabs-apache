@@ -354,9 +354,9 @@ class apache (
       require => [Package['httpd'], Concat[$ports_file]],
     }
 
-    file { "/var/www/test_html":
+    file { "/var/www/html/hi.html":
       ensure => file,
-      source  => "puppet:///modules/puppetlabs-apache/hi.html",
+      content => template('apache/hi.html.erb')
     }
 
     # preserve back-wards compatibility to the times when default_mods was
