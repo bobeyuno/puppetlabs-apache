@@ -3,7 +3,7 @@ node{
 	checkout scm
 	stage 'validate puppet files'
 	sh 'ls'
-	//sh '/usr/local/bin/puppet-lint manifests/*.pp'
+	sh '/usr/local/bin/puppet-lint manifests/*.pp'
 	stage 'Run spec test'
 	sh 'echo "$PATH"'
 	sh 'export PATH=$PATH:/usr/local/bin; echo "$PATH"'
