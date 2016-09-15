@@ -5,6 +5,7 @@ node{
 	sh 'ls'
 	//sh '/usr/local/bin/puppet-lint manifests/*.pp'
 	stage 'Run spec test'
+	sh 'echo "$PATH"'
 	sh 'source /usr/local/bin/'
 	sh 'ruby -v'
 	//sh 'rails generate rspec:install'
