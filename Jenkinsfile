@@ -2,8 +2,8 @@ node{
 	stage 'checkout'
 	checkout scm
 	stage 'validate puppet files'
-	sh 'env'
-	sh 'who; puppet-lint manifests/*.pp'
+	sh 'ruby -v'
+	sh 'rvm use "ruby@gemset"; who; puppet-lint manifests/*.pp'
 	stage 'Run spec test'
 	sh 'rspec spec'  
 	echo 'sup world'
