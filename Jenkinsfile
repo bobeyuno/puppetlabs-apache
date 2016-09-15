@@ -2,7 +2,7 @@ node{
 	stage 'checkout'
 	checkout scm
 	stage 'validate puppet files'
-	sh 'ls'
+	sh 'env'
 	sh 'who; puppet-lint manifests/*.pp'
 	stage 'Run spec test'
 	sh 'rspec spec'  
