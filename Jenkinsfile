@@ -23,10 +23,10 @@ node{
 	stage 'Update control repo'
 	sh '''#!/bin/bash -l
 	cd ../
-	if [ ! -d control_repo ]; then
-			git clone -b development git@github.com:bobeyuno/control_repo.git
+	if [ ! -d control_repo_working ]; then
+			git clone -b development git@github.com:bobeyuno/control_repo.git control_repo_working
 	fi
-	cd control_repo
+	cd control_repo_working
 	git checkout development
 	git pull	
 	//less Puppetfile
