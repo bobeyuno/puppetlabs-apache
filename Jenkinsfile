@@ -16,9 +16,9 @@ node{
 
 
 	//''' 
-	//stage 'tag'
+	stage 'tag'
 	//sh 'env'
-	//sh 'git remote set-url origin git@github.com:bobeyuno/puppetlabs-apache.git && git tag 0.0.$BUILD_NUMBER && git push origin --tags'
+	sh 'git remote set-url origin git@github.com:bobeyuno/puppetlabs-apache.git && git tag 0.0.$BUILD_NUMBER && git push origin --tags'
 
 	stage 'Update control repo'
 	sh '''#!/bin/bash -l
@@ -29,9 +29,10 @@ node{
 	cd control_repo
 	git checkout development
 	git pull	
-	less Puppetfile
+	//less Puppetfile
 	sed "s/[0-9].[0-9].[0-9]*/0.0.$BUILD_NUMBER/" <Puppetfile > Puppetfile.new
 	mv -f Puppetfile.new Puppetfile
-	less Puppetfile
+	//less Puppetfile
+	git push origin 
 	'''
 }
