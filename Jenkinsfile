@@ -18,5 +18,5 @@ node{
 	//''' 
 	stage 'tag'
 	sh 'env'
-	git tag -a $BUILD_NUMBER
+	sh 'git tag -a $BUILD_NUMBER'
 }
