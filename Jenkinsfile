@@ -9,6 +9,7 @@ node{
 	stage 'Run spec test'
 	sh '''#!/bin/bash -l
 	ruby -v
+	rails generate rspec:install
 	rspec spec
 	''' 
 	stage 'test'
