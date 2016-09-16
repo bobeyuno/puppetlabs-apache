@@ -7,8 +7,8 @@ class apache::dev {
   $packages = $::apache::dev_packages
   if $packages { # FreeBSD doesn't have dev packages to install
     package { $packages:
-      ensure  => present,
       require => Package['httpd'],
+      ensure  => present
     }
   }
 }
